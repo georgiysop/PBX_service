@@ -1,0 +1,24 @@
+.table {
+  /* display: flex;
+
+  justify-content: center;
+  align-items: center; */
+  margin-top: 40px;
+  width: 98%;
+  height: 730px;
+  overflow: auto;
+
+  margin-top: 20px;
+  position: relative;
+  z-index: 1; /* Устанавливаем таблицу ниже компонента */
+
+  -webkit-box-shadow: 1px 3px 56px 0px rgba(34, 60, 80, 0.29);
+  -moz-box-shadow: 1px 3px 56px 0px rgba(34, 60, 80, 0.29);
+  box-shadow: 1px 3px 56px 0px rgba(34, 60, 80, 0.29);
+}
+
+.Calen {
+  margin-top: 20px;
+  position: relative;
+  z-index: 2; /* Устанавливаем порядок слоя для Calen */
+}

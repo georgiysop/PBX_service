@@ -1,0 +1,47 @@
+.wrapper {
+  height: 100vh;
+  grid-area: n;
+  padding-left: 20px;
+}
+
+.vash_logo {
+  width: 250px;
+  text-decoration: none;
+  padding-bottom: 50px;
+}
+.logo {
+  margin-right: 10px;
+}
+
+ul {
+  width: 100%;
+  padding: 20px;
+  list-style-type: none;
+}
+ul li {
+  padding: 10px;
+}
+
+.styleMenu {
+  display: flex;
+  width: 100%;
+  padding-top: 50px;
+
+  border-radius: 20px;
+
+  -webkit-box-shadow: 1px 3px 56px 0px rgba(34, 60, 80, 0.29);
+  -moz-box-shadow: 1px 3px 56px 0px rgba(34, 60, 80, 0.29);
+  box-shadow: 1px 3px 56px 0px rgba(34, 60, 80, 0.29);
+}
+.item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.item:hover {
+  background-color: #ebf9f7;
+  border-radius: 10px;
+  transition: 0.4s;
+}

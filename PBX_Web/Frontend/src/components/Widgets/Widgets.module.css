@@ -1,0 +1,17 @@
+.wrapper {
+  background-color: white;
+  width: 400px;
+  height: 400px;
+  margin: 10px;
+
+  -webkit-box-shadow: 1px 3px 56px 0px rgba(34, 60, 80, 0.29);
+  -moz-box-shadow: 1px 3px 56px 0px rgba(34, 60, 80, 0.29);
+  box-shadow: 1px 3px 56px 0px rgba(34, 60, 80, 0.29);
+
+  border-radius: 30px;
+}
+
+.graf {
+  width: 800px;
+  height: 400px;
+}

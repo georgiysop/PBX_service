@@ -1,0 +1,14 @@
+.table {
+  /* display: flex;
+  
+    justify-content: center;
+    align-items: center; */
+  margin-top: 40px;
+  width: 98%;
+  height: 730px;
+  overflow: auto;
+
+  -webkit-box-shadow: 1px 3px 56px 0px rgba(34, 60, 80, 0.29);
+  -moz-box-shadow: 1px 3px 56px 0px rgba(34, 60, 80, 0.29);
+  box-shadow: 1px 3px 56px 0px rgba(34, 60, 80, 0.29);
+}

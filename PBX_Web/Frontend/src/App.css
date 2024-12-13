@@ -1,0 +1,20 @@
+* {
+  font-family: "Light"; /*Can be any text*/
+  src: local("Comfortaa-Lightt"),
+    url("./fonts/Comfortaa-Light.ttf") format("truetype");
+  color: #7a59ff;
+}
+
+.app-wrapper {
+  display: grid;
+
+  grid-template-areas: "n" "n";
+
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 12fr;
+  grid-gap: 20px;
+}
+
+.app-wrapper-content {
+  width: 100%;
+}

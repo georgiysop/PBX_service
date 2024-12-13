@@ -1,0 +1,96 @@
+version: '3.5'
+services:
+  backend:
+    image: node:20.14-slim
+    tty: True
+    container_name: web_backend
+    ports:
+      - "3001:3001/tcp"
+    volumes:
+      - "./PBX_Web/Backend:/code/Backend"
+      - "./PBX_SQLite/:/code/PBX_SQLite/"
+    working_dir: /code/Backend
+    command: bash -c "npm install && npm start"
+    networks:
+      - base_network
+    restart: unless-stopped
+
+  frontend:
+    image: node:20.14-slim
+    tty: True
+    container_name: web_frontend
+    ports:
+      - "3000:3000/tcp"
+    volumes:
+      - "./PBX_Web/Frontend:/code/Frontend"
+    working_dir: /code/Frontend
+    command: bash -c "npm install --legacy-peer-deps && npm start"
+    networks:
+      - base_network
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  avaya:
+    image: python:alpine
+    tty: True
+    container_name: PBX_avaya
+    environment:
+      IP_ADRESS: 192.168.1.4
+    volumes:
+      - './PBX_Avaya_g650:/code/PBX_Avaya_g650'
+      - './PBX_SQLite:/code/PBX_SQLite/'
+    working_dir: /code/PBX_Avaya_g650
+    command: "python3 server.py"
+    network_mode: host
+    restart: unless-stopped
+
+  Filial1:
+    image: python:alpine
+    tty: True
+    container_name: PBX_01
+    environment:
+      IP_ADRESS: 192.168.1.5
+    volumes:
+      - './PBX_Nec_2000_sv8300:/code/PBX_Nec_2000_sv8300'
+      - './PBX_SQLite:/code/PBX_SQLite/'
+    working_dir: /code/PBX_Nec_2000_sv8300
+    command: "python main.py"
+    networks:
+      - base_network
+    restart: unless-stopped
+
+  Filial2:
+    image: python:alpine
+    tty: True
+    container_name: PBX_02
+    environment:
+      IP_ADRESS: 192.168.1.6
+    volumes:
+      - './PBX_Nec_2000_sv8300:/code/PBX_Nec_2000_sv8300'
+      - './PBX_SQLite:/code/PBX_SQLite/'
+    working_dir: /code/PBX_Nec_2000_sv8300
+    command: "python main.py"
+    networks:
+      - base_network
+    restart: unless-stopped
+
+  Filial3:
+    image: python:alpine
+    tty: True
+    container_name: PBX_03
+    environment:
+      IP_ADRESS: 192.168.1.7
+    volumes:
+      - './PBX_Nec_2000_sv8300:/code/PBX_Nec_2000_sv8300'
+      - './PBX_SQLite:/code/PBX_SQLite/'
+    working_dir: /code/PBX_Nec_2000_sv8300
+    command: "python main.py"
+    networks:
+      - base_network
+    restart: unless-stopped
+
+ 
+networks:
+  base_network:
+    driver: bridge

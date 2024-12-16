@@ -50,7 +50,7 @@ def check_table():
                 hash TEXT
             );
             ''')
-            cursor.execute('''INSERT INTO Accounts(login,password,hash) VALUES ('admin','admin', ''); ''')
+            cursor.execute('''INSERT INTO Accounts(login,password,hash) VALUES ('admin','$2b$10$MIr5JbczBrOQn57BQhtgvu5XPpgo45mk8O5P25R2lumEb/ZbYIRC.', ''); ''')
 
 
 #add row_data to table Rings
